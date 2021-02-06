@@ -1,0 +1,5 @@
+size(400,600)
+strokeWeight(7)
+fill("#FF0303")
+circle(100,120,100)
+rect(100,100,130,250)
