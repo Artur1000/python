@@ -1,0 +1,14 @@
+x=20
+y=20
+
+def setup():
+    size(400,400)
+def draw():
+    background("#00EA38")
+    global x,y
+    circle(x,y,50)
+    
+    x= x+1
+    y= y+1
+
+    
