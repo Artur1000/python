@@ -1,0 +1,7 @@
+def setup():
+    background("#000000")
+    size(400,400)
+    
+def draw():
+    fill(random(0,250),random(10,350),random(10,350))
+    circle (random(10,350) , random(10,350) , 10)
