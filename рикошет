@@ -1,0 +1,30 @@
+x=0
+y=100
+modey ='right'
+modex = 'right'
+def setup():
+    size(600,600)    
+
+def draw():
+    background("#F502B9")
+    global x,modex,y,modey
+    ellipse(x, y, 55, 55)
+    if modex == 'right':
+        x+=5
+    elif modex == 'left':
+        x -=5
+        
+    if x > 600:
+        modex='left'
+    elif x <0 :
+        modex = 'right'
+        
+    if modey == 'right':
+        y+=5
+    elif modey == 'left':
+        y -=5
+        
+    if y > 600:
+        modey='left'
+    elif y <0 :
+        modey = 'right'
