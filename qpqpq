@@ -1,0 +1,16 @@
+x=200
+def setup():
+    background("#000000")
+    size(800,800)
+    
+def draw():
+    background("#F50505")    
+    global x
+    translate(mouseX,mouseY)
+    rotate(radians(x))
+    ellipse(0, 0, 55, 55)
+    circle(100,0,50)
+
+    
+    x+=5
+    
