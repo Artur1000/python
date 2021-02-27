@@ -1,0 +1,14 @@
+q = 0
+def setup():
+    size(600,600)
+def draw():
+    global q 
+    background("#520213") 
+    circle(300,300,q)
+def keyPressed():
+    global q
+    if key == 'w':
+        q = q + 1
+    if key == 'a':
+        q=q - 1
+    
