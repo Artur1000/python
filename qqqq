@@ -1,0 +1,13 @@
+q = "t"
+def setup():
+    background("#000000")
+    fill("#640014")
+    size(600,600)
+    textSize(100)
+def draw():
+    background(255)
+    text(q,0,300)
+def keyTyped():
+    global q 
+    q += key
+    
