@@ -1,0 +1,25 @@
+y = 0
+x = 0
+def setup():
+    size(600,600)
+def draw():
+    background("#F00202")
+    global y,x
+    fil = 1 #0
+    y+=1
+    for i in range(9):
+        for p in range(9):
+            square(i*80,p*80,80 )
+            if fil == 1:
+                fill(255)
+            else:
+                fill(0)
+            #fil =0                 fil = 1
+            if fil == 1:
+                fil = 0 
+            #                       fil =0 
+            elif fil == 0:
+                fil = 1
+            #fil =1                 fil = 1
+            
+    
