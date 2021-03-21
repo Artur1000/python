@@ -1,0 +1,12 @@
+y = 0
+x = 0
+def setup():
+    size(600,600)
+def draw():
+    background("#F00202")
+    global y,x
+    y+=1
+    for i in range(20):
+        square(i*80,y,50 )
+    
+ 
