@@ -1,0 +1,30 @@
+lst = []
+lst2 = []
+activeIndex = 0
+def setup():
+    size(600,600)
+    lst.append( loadImage("grav1.png") )
+    lst.append( loadImage("grav2.jpg") )
+    lst.append( loadImage("grav4.jpg") )
+    lst.append( loadImage("grav3.png") )
+    lst2.append("wendy")
+    lst2.append("gideon")
+    lst2.append("dipper")
+    lst2.append("sten")
+def draw():
+    fill("#FA1212")
+    global activeIndex
+    background(0)
+    image(lst[activeIndex], 300,300)
+    textSize(50)
+    fill(255,0,0)
+    text(lst2[activeIndex],50,50)
+def mouseClicked():
+    global activeIndex
+    if mouseButton == RIGHT and activeIndex != 3:
+        activeIndex += 1
+    if mouseButton == LEFT and activeIndex != 0:
+        activeIndex -= 1
+    
+    
+            
