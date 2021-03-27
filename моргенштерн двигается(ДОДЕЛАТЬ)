@@ -1,0 +1,25 @@
+x = 0
+y = 0
+lst = []
+lst2 = []
+activeIndex = 0
+def setup():
+    size(600,600)
+    lst.append( loadImage("op.png") )
+
+def draw():
+    fill("#FA1212")
+    global activeIndex
+    background(0)
+    image(lst[activeIndex], 300,300,200,200)
+    textSize(50)
+    fill(255,0,0)
+
+def keyPressed():
+    global activeIndex
+    if mouseButton == RIGHT:
+        activeIndex += 1
+    if mouseButton == LEFT:
+        activeIndex -= 1
+#ПАПКА dbyrc создать
+            
