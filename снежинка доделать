@@ -1,0 +1,25 @@
+dy = []
+r = []
+def vetka():
+   line(0,0,100,0)
+   line(70,0,90,20)
+   line(70,0,90,-20)
+   line(30,0,50,20)
+   line(30,0,50,20)
+   line(30,0,50,-20)
+
+def snow(x,y,s):
+    translate(x,y)
+    scale(s)
+    for i in range(8):
+        vetka()
+        rotate(radians(45))
+    
+def setup():
+    dy = range(len(y))
+    size(600,600)
+def draw():
+    snow(200,200,0.5)
+    
+    
+                
