@@ -1,0 +1,23 @@
+class Circle:
+    def __init__(self):
+        self.x =250
+        self.y =250 
+    def draw_(self):
+        circle(self.x,self.y,50)
+
+circ = Circle()
+def setup():
+    size(400,400)
+def draw():
+    background("#EA0707")
+    global circ
+    circ.draw_()
+    if keyPressed:
+        if keyCode == RIGHT:
+            circ.x += 2
+        if keyCode == LEFT:
+            circ.x -= 2
+        if keyCode == DOWN:
+            circ.y += 2
+        if keyCode == UP:
+            circ.y -=2
