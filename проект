@@ -1,0 +1,32 @@
+x = 0
+y = 0
+lst = []
+def setup():
+    size(700,700)
+    textSize(70)
+    lst.append( loadImage("selo.jpg") )
+    lst.append( loadImage("selo2.jpg") )
+def draw():
+    background("#4AFF15")
+    if x > 200:
+        image(lst[0] , 0,0,700,700)
+    if x > 500:
+        image(lst[1] , 0,0,700,700)
+    
+    text(x,11,60)
+
+    
+    
+def keyPressed():
+
+    global x
+    if key==' ':
+        x+=1
+    if key=='q':
+       x += 1000
+    if key=='p':
+       x += 5000
+
+    
+    
+    
