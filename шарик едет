@@ -1,0 +1,17 @@
+x = 0
+y = 0
+def setup():
+    size(400,400)
+def draw():
+    pass
+def keyPressed():
+    circle(x,y,50)
+    global x,y
+    if keyCode == RIGHT:
+        x += 2
+    if keyCode == LEFT:
+        y -= 2
+    if keyCode == DOWN:
+         x-= 2
+    if keyCode == UP:
+         y+=2
