@@ -1,17 +1,40 @@
+class Image:
+    def __init__ (self, file):
+        self.img =loadImage(file)
+        self.x = random( 0,700)
+        self.y = random( 0,700)
+        self.dx = random( 100,200)
+        self.dy = random( 100,200)
+    def draw_(self):
+        image(self.img , self.x , self.y , self.dx , self.dy)
+
 x = 0
 y = 0
 lst = []
+houses = []
 def setup():
     size(700,700)
     textSize(70)
-    lst.append( loadImage("selo.jpg") )
+    lst.append( loadImage("selol.jpg") )
     lst.append( loadImage("selo2.jpg") )
+    lst.append( loadImage("selo3.jpg") )
+    lst.append( loadImage("dom.png") )
+    lst.append( loadImage("selo4.png") )
 def draw():
     background("#4AFF15")
-    if x > 200:
+    if x > 20:
         image(lst[0] , 0,0,700,700)
-    if x > 500:
+    if x > 50:
         image(lst[1] , 0,0,700,700)
+    if x > 70:
+        image(lst[2] , 0,0,700,700)
+    if x > 103 :
+        image(lst[4] , 0,0,700,700)
+        
+    image(lst[3] , 600,50,70,40)    
+    
+    for house in houses:
+        house.draw_()
     
     text(x,11,60)
 
@@ -19,13 +42,17 @@ def draw():
     
 def keyPressed():
 
-    global x
+    global x,houses
     if key==' ':
         x+=1
     if key=='q':
-       x += 1000
+       x += 100
     if key=='p':
-       x += 5000
+       x += 50 
+    if key == "1":
+        if x > 100:
+            houses.append(Image("dom2.png"))
+                          
 
     
     
