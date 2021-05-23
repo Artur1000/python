@@ -1,3 +1,7 @@
+state=0
+
+
+
 class Image:
     def __init__ (self, file):
         self.img =loadImage(file)
@@ -23,32 +27,53 @@ def setup():
     lst.append( loadImage("dom1.jpg") )
     lst.append( loadImage("dom2.jpg") )   
 def draw():
-    background("#4AFF15")
-    if x > 10:
-        image(lst[0] , 0,0,700,700)
-    if x > 20:
-        image(lst[1] , 0,0,700,700)
-    if x > 40:
-        image(lst[2] , 0,0,700,700)
-    if x > 60 :
-        image(lst[4] , 0,0,700,700)
-    image(lst[3] , 600,50,70,40)  
-    if x > 103 :
-        image(lst[5] , 0,0,700,700)
-    if x > 300 :
-        image(lst[6] , 0,0,700,700)
+    global state
+    
+    if  state == 0:
+        background(0)
+ 
+   
+        fill("#19FC2A")
+        rect(250,360,320,120)
+        fill("#4808FF")
+        textSize(22)
+        text('to start the game press ENTER',250,410)
+   
+    elif state == 1:
         
-    
-    for house in houses:
-        house.draw_()
-    
-    text(x,11,60)
-
+        background("#4AFF15")
+        if x > 10:
+            image(lst[0] , 0,0,700,700)
+        if x > 20:
+            image(lst[1] , 0,0,700,700)
+        if x > 40:
+            image(lst[2] , 0,0,700,700)
+        if x > 60 :
+            image(lst[4] , 0,0,700,700)
+        image(lst[3] , 600,50,70,40)  
+        if x > 103 :
+            image(lst[5] , 0,0,700,700)
+        if x > 200 :
+            image(lst[6] , 0,0,700,700)
+        
+        
+        for house in houses:
+            house.draw_()
+        textSize(70)
+        text(x,11,60)
+   
     
     
 def keyPressed():
 
-    global x,houses
+    global x,houses,state
+    
+    if key == ENTER:
+        if state == 0:
+            state = 1
+        elif state ==1:
+            state =0
+            
     if key==' ':
         x+=1
         if len(houses) > 5:
@@ -65,7 +90,9 @@ def keyPressed():
                 houses.append(Image("dom2.png"))
     if key == "2":
         if x > 150:
-            houses.append(Image("dom3.png"))
+            if len(houses) < 15:
+                houses.append(Image("dom3.png"))
     if key == "3":
         if x > 200:
-            houses.append(Image("dom4.png"))
+               if len(houses) < 15:
+                houses.append(Image("dom4.png"))
